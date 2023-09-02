@@ -8,10 +8,16 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-   <ScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
-       <include layout="@layout/item_deadline_default"/>
-   </ScrollView>
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/deadline_default_recyclerview"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        tools:listitem="@layout/item_deadline_default"/>-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/item_deadline_default" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

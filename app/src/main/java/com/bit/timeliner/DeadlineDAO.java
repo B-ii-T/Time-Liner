@@ -22,4 +22,6 @@ public interface DeadlineDAO {
 
     @Query("SELECT * FROM deadline_table WHERE timelineId = :timelineId")
     LiveData<List<Deadline>> getDeadlinesForTimeline(int timelineId);
+    @Query("SELECT * FROM deadline_table")
+    LiveData<List<Deadline>> getAllDeadlines();
 }

@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_radius"
     android:padding="16dp"
+    android:layout_marginBottom="16dp"
     android:orientation="vertical"
     >
 
