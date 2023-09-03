@@ -10,15 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.ViewHolder> {
-    private List<Deadline> deadlines;
+    private List<Deadline> deadlines = new ArrayList<>();
 
-    public DeadlineAdapter(List<Deadline> deadlines) {
-        this.deadlines = deadlines;
-    }
+//    public DeadlineAdapter(List<Deadline> deadlines) {
+//        this.deadlines = deadlines;
+//    }
 
     @NonNull
     @Override

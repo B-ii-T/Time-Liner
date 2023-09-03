@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.add(Calendar.MINUTE, 1);
 //        deadlineViewModel.insertDeadline(new Deadline(1, "Science homework", calendar.getTime()));
-//        DeadlineAdapter adapter = new DeadlineAdapter(new ArrayList<>());
+//        DeadlineAdapter adapter = new DeadlineAdapter();
 //        defaultDeadlinRecycler.setAdapter(adapter);
 //        deadlineViewModel.getAllDeadlines().observe(this, new Observer<List<Deadline>>() {
 //            @Override
