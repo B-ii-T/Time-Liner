@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +32,9 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     public void onBindViewHolder(@NonNull TimelineAdapter.ViewHolder holder, int position) {
         Timeline currentTimeline = timelines.get(position);
         holder.timelineTitle.setText(currentTimeline.getTimeLineName());
+//        holder.itemView.setOnClickListener(v -> {
+//            Toast.makeText(v.getContext(), currentTimeline.getTimeLineName(), Toast.LENGTH_SHORT).show();
+//        });
     }
     @Override
     public int getItemCount() {

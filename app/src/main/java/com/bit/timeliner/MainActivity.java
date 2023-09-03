@@ -16,24 +16,27 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public static DeadlineViewModel deadlineViewModel;
     public static TimelineViewModel timelineViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        RecyclerView defaultDeadlinRecycler = findViewById(R.id.deadline_default_recyclerview);
-//        defaultDeadlinRecycler.setLayoutManager(new LinearLayoutManager(this));
-//        deadlineViewModel = new ViewModelProvider(this).get(DeadlineViewModel.class);
-//        timelineViewModel = new ViewModelProvider(this).get(TimelineViewModel.class);
-//        Calendar calendar = Calendar.getInstance();
-//        calendar.add(Calendar.MINUTE, 1);
-//        deadlineViewModel.insertDeadline(new Deadline(1, "Science homework", calendar.getTime()));
-//        DeadlineAdapter adapter = new DeadlineAdapter();
-//        defaultDeadlinRecycler.setAdapter(adapter);
-//        deadlineViewModel.getAllDeadlines().observe(this, new Observer<List<Deadline>>() {
-//            @Override
-//            public void onChanged(List<Deadline> deadlines) {
-//                adapter.setDeadLines(deadlines);
-//            }
-//        });
+        deadlineViewModel = new ViewModelProvider(this).get(DeadlineViewModel.class);
+        timelineViewModel = new ViewModelProvider(this).get(TimelineViewModel.class);
+        RecyclerView timelinesRecyclerView = findViewById(R.id.timelines_recycler_view);
+        timelinesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        TimelineAdapter timelineAdapter = new TimelineAdapter();
+        timelinesRecyclerView.setAdapter(timelineAdapter);
+        timelineViewModel.getAllTimelines().observe(this, new Observer<List<Timeline>>() {
+            @Override
+            public void onChanged(List<Timeline> timelines) {
+                timelineAdapter.setTimelines(timelines);
+            }
+        });
+        DeadlinesFragment deadlinesFragment = new DeadlinesFragment();
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frame, deadlinesFragment)
+                .commit();
     }
 }

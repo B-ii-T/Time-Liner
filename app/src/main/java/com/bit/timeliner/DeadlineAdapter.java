@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +34,9 @@ public class DeadlineAdapter extends RecyclerView.Adapter<DeadlineAdapter.ViewHo
         Deadline currentDeadline = deadlines.get(position);
         holder.deadlineTitle.setText(currentDeadline.getDeadLineName());
         calculateAndDisplayRemainingTime(currentDeadline.getDeadLineDate(), holder.deadlineDate);
+//        holder.itemView.setOnClickListener(v -> {
+//            Toast.makeText(v.getContext(), currentDeadline.getDeadLineName(), Toast.LENGTH_SHORT).show();
+//        });
     }
     private void calculateAndDisplayRemainingTime(Date deadlineDate, TextView deadlineDateTextView) {
         long currentTime = System.currentTimeMillis();
