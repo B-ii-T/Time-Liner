@@ -4,4 +4,5 @@
     <!--    In App Placeholders-->
     <string name="deadline_title">Deadline title</string>
     <string name="deadline_time_left">22th - 33 Days left</string>
+    <string name="timeline_title">Timeline title</string>
 </resources>

@@ -3,6 +3,8 @@
     <style name="Base.Theme.TimeLiner" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/primary</item>
+         <item name="android:colorBackground">@color/white</item>
+         <item name="android:colorForeground">@color/black</item>
 
     </style>
 
