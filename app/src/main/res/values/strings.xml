@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Time Liner</string>
 
-<!--    In App Placeholders-->
+    <!--    In App Placeholders-->
     <string name="deadline_title">Deadline title</string>
     <string name="deadline_time_left">22th - 33 Days left</string>
 </resources>
