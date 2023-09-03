@@ -16,6 +16,10 @@ import java.util.List;
 
 public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHolder> {
     private List<Timeline> timelines = new ArrayList<>();
+    private OnTimelineClickListener listener;
+    public void setOnTimelineClickListener(OnTimelineClickListener listener) {
+        this.listener = listener;
+    }
 
 //    public TimelineAdapter(List<Timeline> timelines) {
 //        this.timelines = timelines;
@@ -32,6 +36,13 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     public void onBindViewHolder(@NonNull TimelineAdapter.ViewHolder holder, int position) {
         Timeline currentTimeline = timelines.get(position);
         holder.timelineTitle.setText(currentTimeline.getTimeLineName());
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                if (position != RecyclerView.NO_POSITION) {
+                    listener.onTimelineClick(currentTimeline.getTimeLineId(), currentTimeline.getTimeLineName());
+                }
+            }
+        });
 //        holder.itemView.setOnClickListener(v -> {
 //            Toast.makeText(v.getContext(), currentTimeline.getTimeLineName(), Toast.LENGTH_SHORT).show();
 //        });
@@ -39,6 +50,9 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     @Override
     public int getItemCount() {
         return timelines.size();
+    }
+    public interface OnTimelineClickListener {
+        void onTimelineClick(int id, String name);
     }
 
     public void setTimelines(List<Timeline> timelines){
@@ -51,7 +65,7 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            timelineTitle = itemView.findViewById(R.id.tvTimelineTitle);;
+            timelineTitle = itemView.findViewById(R.id.tvTimelineTitle);
         }
     }
 
