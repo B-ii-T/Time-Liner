@@ -23,6 +23,8 @@ public class TimelineDeadlinesFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.timeline_deadlines_fragment, container, false);
         RecyclerView timelinedDeadlinesRecycler = rootView.findViewById(R.id.deadline_timelined_recyclerview);
         timelinedDeadlinesRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        String timelineName = getArguments().getString("timelineName", "Timeline Name");
+        MainActivity.toolbarTitle.setText(timelineName);
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.add(Calendar.MINUTE, 1);
 //        MainActivity.deadlineViewModel.insertDeadline(new Deadline(1, "Science homework", calendar.getTime()));

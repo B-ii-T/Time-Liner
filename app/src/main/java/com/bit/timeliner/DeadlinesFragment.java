@@ -30,6 +30,7 @@ public class DeadlinesFragment extends Fragment {
 //        deadlineViewModel.insertDeadline(new Deadline(1, "Science homework", calendar.getTime()));
         DeadlineAdapter deadlineAdapter = new DeadlineAdapter();
         defaultDeadlinRecycler.setAdapter(deadlineAdapter);
+        MainActivity.toolbarTitle.setText("Deadlines");
         MainActivity.deadlineViewModel.getAllDeadlines().observe(getViewLifecycleOwner(), new Observer<List<Deadline>>() {
             @Override
             public void onChanged(List<Deadline> deadlines) {

@@ -11,12 +11,35 @@
     <!-- Your main content layout -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            app:titleTextColor="@color/white"
+            app:subtitleTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:text="Title"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
         <FrameLayout
             android:id="@+id/frame"
+            android:layout_below="@id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:padding="16dp"/>
     </RelativeLayout>
 
     <!-- NavigationView for the drawer -->
@@ -24,12 +47,13 @@
         android:id="@+id/nav_view"
         android:layout_width="240dp"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:background="@color/white">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <TextView
                 android:id="@+id/timelines_title"
                 android:layout_width="wrap_content"
@@ -37,17 +61,17 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="16dp"
+                android:text="@string/timelines"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="@string/timelines"/>
+                android:textStyle="bold" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/timelines_recycler_view"
-                android:layout_below="@id/timelines_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/item_timeline"/>
+                android:layout_below="@id/timelines_title"
+                tools:listitem="@layout/item_timeline" />
         </RelativeLayout>
-
 
 
     </com.google.android.material.navigation.NavigationView>
