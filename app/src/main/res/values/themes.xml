@@ -6,7 +6,73 @@
          <item name="android:colorBackground">@color/white</item>
          <item name="android:colorForeground">@color/black</item>
 
+        <item name="android:statusBarColor">?android:colorBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!--        Applying default styles-->
+        <item name="android:buttonStyle">@style/ButtonIcon</item>
+
     </style>
 
     <style name="Theme.TimeLiner" parent="Base.Theme.TimeLiner" />
+
+        <!--    Default Styles-->
+    <style name="ButtonSimple" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="background">@drawable/bg_radius</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textColor">?android:colorBackground</item>
+    </style>
+    <style name="ButtonIcon" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="background">@drawable/bg_radius</item>
+        <item name="android:drawableEnd">@android:drawable/stat_sys_warning</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textColor">?android:colorBackground</item>
+    </style>
+
+    <style name="InputText">
+        <item name="borderWidth">2dp</item>
+        <item name="borderRound">12dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textColor">?android:colorForeground</item>
+    </style>
+        <!--    Typography-->
+    <style name="Text" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">noto</item>
+        <item name="android:textColor">?android:colorForeground</item>
+    </style>
+    <style name="Text.Title" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">60sp</item>
+        <item name="android:textColor">?android:colorForeground</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="Text.SmallTitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">?android:colorForeground</item>
+    </style>
+    <style name="Text.Heading1" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">?android:colorForeground</item>
+    </style>
+    <style name="Text.Heading2" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">?android:colorForeground</item>
+    </style>
+
+
+        <!--    Other styles-->
+
 </resources>
